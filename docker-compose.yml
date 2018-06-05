@@ -1,0 +1,92 @@
+version: '2'
+services:
+  reverseproxy:
+    ports:
+      - "80:5000"
+    depends_on:
+      - voidwellapi
+      - voidwellauth
+      - voidwellclientui
+    build:
+      context: ../Voidwell.ReverseProxy
+      dockerfile: Dockerfile
+
+  voidwellclientui:
+    ports:
+      - "5000"
+    build:
+      context: ../Voidwell.ClientUI
+      dockerfile: Dockerfile.debug
+    volumes:
+      - ../Voidwell.ClientUI:/app
+      - ../Voidwell.ClientUI/src/ClientApp/src/assets:/dist/files
+
+  voidwellauth:
+    environment:
+      Environment: "Development"
+      DBConnectionString: "YourConnectionString"
+      Issuer: "auth.localdev.com"
+    ports:
+      - "23400:5000"
+    depends_on:
+      - voidwellusermanagement
+    build:
+      context: ../Voidwell.Auth
+      dockerfile: Dockerfile.debug
+    volumes:
+      - ../Voidwell.Auth/src/:/app
+      
+  voidwellusermanagement:
+    environment:
+      DBConnectionString: "YourConnectionString"
+      Issuer: "auth.localdev.com"
+    ports:
+      - "23402:5000"
+    build:
+      context: ../Voidwell.UserManagement
+      dockerfile: Dockerfile.debug
+    volumes:
+      - ../Voidwell.UserManagement/src/Voidwell.UserManagement:/app
+      
+  voidwellapi:
+    ports:
+      - "23401:5000"
+    depends_on:
+      - voidwellusermanagement
+      - voidwelldaybreakgames
+    build:
+      context: ../Voidwell.API
+      dockerfile: Dockerfile.debug
+    volumes:
+      - ../Voidwell.API/src/Voidwell.API:/app
+      
+  voidwellinternal:
+    environment:
+      DBConnectionString: "YourConnectionString"
+      RedisConfiguration: "redis"
+    ports:
+      - "23403:5000"
+    build:
+      context: ../Voidwell.Internal
+      dockerfile: Dockerfile.debug
+    volumes:
+      - ../Voidwell.Internal/src/Voidwell.Internal:/app
+      
+  voidwelldaybreakgames:
+    environment:
+      DBConnectionString: "YourConnectionString"
+      RedisConfiguration: "redis"
+      CensusServiceKey: "example"
+      DisableUpdater: "true"
+    ports:
+      - "23404:5000"
+    build:
+      context: ../Voidwell.DaybreakGames
+      dockerfile: Dockerfile.debug
+    volumes:
+      - ../Voidwell.DaybreakGames/src/:/app
+      
+  redis:
+    image: redis:alpine
+    ports: 
+      - "6379"
