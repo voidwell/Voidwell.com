@@ -30,5 +30,7 @@ Voidwell.com leverages a few technology stacks to operate. The main being docker
 * [Voidwell.UserManagement](https://github.com/Lampjaw/Voidwell.UserManagement)
   * Manages user data and authentication.
   
+Note: As of writing this, some repositories may still be private and return a 404.
+  
 #### Setup
 To get the application up and running you may want to use the docker-compose.yml file in this repository. Just make sure to fill in the required fields.
