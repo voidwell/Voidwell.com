@@ -4,9 +4,10 @@ Voidwell.com leverages a few technology stacks to operate. The main being docker
 
 #### Technologies used:
 
-* .NET Core 2.x
+* .NET Core 2.x (C#)
   * ASP.NET Core Identity
   * IdentityServer4
+  * Entity Framework Core
 * AngularJS 5.x (TypeScript/JavaScript)
 * PostgreSQL (SQL)
 * Docker
