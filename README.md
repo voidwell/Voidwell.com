@@ -17,7 +17,7 @@ Voidwell.com leverages a few technology stacks to operate. The main being docker
 
 * [Voidwell.API](https://github.com/Lampjaw/Voidwell.API)
   * REST API gateway responsible for user authorization and internal route propagation.
-* [Voidwell.Auth](https://github.com/Lampjaw/Voidwell.API)
+* [Voidwell.Auth](https://github.com/Lampjaw/Voidwell.Auth)
   * OpenID Connect provider.
 * [Voidwell.ClientUI](https://github.com/Lampjaw/Voidwell.ClientUI)
   * Front end interface for [Voidwell.com](https://voidwell.com).
