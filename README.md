@@ -8,7 +8,7 @@ Voidwell.com leverages a few technology stacks to operate. The main being docker
   * ASP.NET Core Identity
   * IdentityServer4
   * Entity Framework Core
-* AngularJS 5.x (TypeScript/JavaScript)
+* AngularJS 7.x (TypeScript/JavaScript)
 * PostgreSQL (SQL)
 * Docker
 * Redis
