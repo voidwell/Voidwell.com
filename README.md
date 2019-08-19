@@ -16,22 +16,20 @@ Voidwell.com leverages a few technology stacks to operate. The main being docker
 
 #### Services
 
-* [Voidwell.API](https://github.com/Lampjaw/Voidwell.API)
+* [Voidwell.API](https://github.com/voidwell/Voidwell.API)
   * REST API gateway responsible for user authorization and internal route propagation.
-* [Voidwell.Auth](https://github.com/Lampjaw/Voidwell.Auth)
+* [Voidwell.Auth](https://github.com/voidwell/Voidwell.Auth)
   * OpenID Connect provider.
-* [Voidwell.ClientUI](https://github.com/Lampjaw/Voidwell.ClientUI)
+* [Voidwell.ClientUI](https://github.com/voidwell/Voidwell.ClientUI)
   * Front end interface for [Voidwell.com](https://voidwell.com).
-* [Voidwell.DaybreakGames](https://github.com/Lampjaw/Voidwell.DaybreakGames)
+* [Voidwell.DaybreakGames](https://github.com/voidwell/Voidwell.DaybreakGames)
   * Manages data and interactions regarding Daybreak Games Company properties (e.g. Planetside 2).
-* [Voidwell](https://github.com/Lampjaw/Voidwell)
+* [Voidwell](https://github.com/lampjaw/Voidwell)
   * Manages data specifically belonging to Voidwell (e.g. the blog, event configurations, etc).
-* [Voidwell.ReverseProxy](https://github.com/Lampjaw/Voidwell.ReverseProxy)
+* [Voidwell.ReverseProxy](https://github.com/voidwell/Voidwell.ReverseProxy)
   * A simple reverse proxy implemenation for handling routing to the necessary public services.
-* [Voidwell.UserManagement](https://github.com/Lampjaw/Voidwell.UserManagement)
+* [Voidwell.UserManagement](https://github.com/voidwell/Voidwell.UserManagement)
   * Manages user data and authentication.
-  
-Note: As of writing this, some repositories may still be private and return a 404.
   
 #### Setup
 To get the application up and running you may want to use the docker-compose.yml file in this repository. Just make sure to fill in the required fields.
